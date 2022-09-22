@@ -32,7 +32,7 @@ public class StudentRepoTest {
 
     ///uni directional one to one
     // we need Transactional here as we have used LAZY loading over passport in Student entity
-    // so it will run separate query to get passport data from database.
+    // so it will not run separate query to get passport data from database.
     @Test
     @Transactional
     public void retrieveStudentAndPassportDetails(){
