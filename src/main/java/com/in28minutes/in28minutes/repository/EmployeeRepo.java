@@ -4,6 +4,8 @@ import com.in28minutes.in28minutes.entity.Course;
 import com.in28minutes.in28minutes.entity.Passport;
 import com.in28minutes.in28minutes.entity.Student;
 import com.in28minutes.in28minutes.entity.inheritance.Employee;
+import com.in28minutes.in28minutes.entity.inheritance.FullTimeEmployee;
+import com.in28minutes.in28minutes.entity.inheritance.PartTimeEmployee;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,4 +35,11 @@ public class EmployeeRepo {
         return entityManager.createQuery("select e from Employee e", Employee.class).getResultList();
     }
 
+    public List<PartTimeEmployee> getPartTimeEmployee(){
+        return entityManager.createQuery("select e from PartTimeEmployee e", PartTimeEmployee.class).getResultList();
+    }
+
+    public List<FullTimeEmployee> getFullTimeEmployee(){
+        return entityManager.createQuery("select e from FullTimeEmployee e", FullTimeEmployee.class).getResultList();
+    }
 }

@@ -56,7 +56,11 @@ public class In28minutesApplication implements CommandLineRunner {
 
 		employeeRepo.insertEmployee(new PartTimeEmployee("Zoye",new BigDecimal(100)));
 
-		logger.info("Fetch Employee : {}", employeeRepo.getAllEmployee());
+		//logger.info("Fetch Employee : {}", employeeRepo.getAllEmployee());
+
+		logger.info("Fetch Employee : {}", employeeRepo.getPartTimeEmployee());
+
+		logger.info("Fetch Employee : {}", employeeRepo.getFullTimeEmployee());
 
 
 	}
