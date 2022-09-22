@@ -8,8 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "Employee_Type")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Employee {
 
     @Id
