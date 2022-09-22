@@ -1,6 +1,7 @@
 package com.in28minutes.in28minutes.repository;
 
 import com.in28minutes.in28minutes.In28minutesApplication;
+import com.in28minutes.in28minutes.entity.Course;
 import com.in28minutes.in28minutes.entity.Passport;
 import com.in28minutes.in28minutes.entity.Student;
 import org.junit.Test;
@@ -70,4 +71,21 @@ public class StudentRepoTest {
 
     }
 
+    @Test
+    @Transactional
+    public void getStudentAndCourse(){
+
+        Student student = entityManager.find(Student.class,2001L);
+        logger.info("Studnet : {}", student);
+        logger.info("Courses: {}", student.getCourse());
+    }
+
+    @Test
+    @Transactional
+    public void getCourseAndStudent(){
+
+        Course course = entityManager.find(Course.class,1001L);
+        logger.info("Studnet : {}", course);
+        logger.info("Courses: {}", course.getStudent());
+    }
 }

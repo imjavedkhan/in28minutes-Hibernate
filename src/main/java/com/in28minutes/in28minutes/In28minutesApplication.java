@@ -43,5 +43,7 @@ public class In28minutesApplication implements CommandLineRunner {
 
 		courseRepo.addReviewForCourse(1003L, reviewList);
 
+		studentRepo.addStudentAndCourse();
+
 	}
 }

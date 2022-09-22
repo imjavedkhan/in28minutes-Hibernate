@@ -26,6 +26,9 @@ public class Course {
     @OneToMany(mappedBy = "course")
     private List<Review> reviewList = new ArrayList<>();
 
+    @ManyToMany(mappedBy = "course")
+    private List<Student> student = new ArrayList<>();
+
 
     public Course() {
     }
@@ -60,6 +63,14 @@ public class Course {
 
     public void removeReview(Review reviewList) {
         this.reviewList.remove(reviewList);
+    }
+
+    public List<Student> getStudent() {
+        return student;
+    }
+
+    public void addStudent(Student student) {
+        this.student.add(student);
     }
 
     @Override

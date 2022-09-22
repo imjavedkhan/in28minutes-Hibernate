@@ -1,5 +1,6 @@
 package com.in28minutes.in28minutes.repository;
 
+import com.in28minutes.in28minutes.entity.Course;
 import com.in28minutes.in28minutes.entity.Passport;
 import com.in28minutes.in28minutes.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +44,20 @@ public class StudentRepo {
         student1.setPassport(passport);
 
         entityManager.persist(student1);
+    }
+
+    public void addStudentAndCourse(){
+
+        Student student = new Student("Thanos");
+        Course course = new Course("Infinity Stones");
+
+        entityManager.persist(student);
+        entityManager.persist(course);
+
+        student.addCourse(course);
+        course.addStudent(student);
+
+        entityManager.persist(student);
     }
 
 }

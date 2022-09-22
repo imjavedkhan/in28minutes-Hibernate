@@ -14,3 +14,8 @@ insert into student(id,name,passport_id) values(2003,'Spider Man',4003);
 insert into review(id,rating,description,course_id) values(5001,'3','Great course',1001);
 insert into review(id,rating,description,course_id) values(5002,'2.5','nice',1001);
 insert into review(id,rating,description,course_id) values(5003,'4','wonderful course',1003);
+
+insert into student_course(student_id,course_id) values(2001,1001);
+insert into student_course(student_id,course_id) values(2002,1001);
+insert into student_course(student_id,course_id) values(2003,1001);
+insert into student_course(student_id,course_id) values(2001,1003);
